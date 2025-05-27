@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dart Stream | Tarjetas de Consumo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 20px;">
+        <img src="assets/logo.jpeg" alt="Logo Dart Stream" style="height: 60px;" />
+        <div>
+            <h1 style="margin: 0; color: #00ffcc;">Dart Stream</h1>
+            <p style="margin: 0; color: #a0f0e0;">Tarjetas de Consumo para Gamers</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#carrito">Carrito de Compras</a></li>
+        </ul>
+    </nav>
+
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+
+        <!-- Productos originales con precios corregidos -->
+        <div class="producto">
+            <img src="assets/netflix.jpeg" alt="Netflix" class="producto-img" />
+            <h3>Netflix - S/10.00</h3>
+            <p class="descripcion">🎬 ¡Accede al mejor contenido en streaming con Netflix! Disfruta de tus series favoritas y películas en cualquier dispositivo con conexión a internet, donde quieras y cuando quieras. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Cuenta original y renovable • Una pantalla por cuenta • Disponible en cualquier país • Compatible con Android TV, smartphones, laptops y PC</p>
+            <p class="detalle">🎞 Contenido destacado: El juego del calamar, Aguas turbias, Adolescencia</p>
+            <button onclick="agregarAlCarrito('Netflix', 10)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/max.jpeg" alt="Max" class="producto-img" />
+            <h3>Max - S/9.00</h3>
+            <p class="descripcion">🎥 Contenido premium de HBO, Warner y Discovery en un solo lugar. Disfruta de historias intensas, documentales y series aclamadas. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Cuenta original • Una pantalla por cuenta • Compatible con cualquier dispositivo</p>
+            <p class="detalle">🎞 Contenido destacado: House of the Dragon, The Gilded Age, Succession</p>
+            <button onclick="agregarAlCarrito('Max', 9)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/spotify.jpeg" alt="Spotify" class="producto-img" />
+            <h3>Spotify - S/10.00</h3>
+            <p class="descripcion">🎵 Escucha tu música favorita sin anuncios y sin conexión. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta premium individual • Reproducción sin conexión • Audio Hi-Fi disponible • Compatible con todos los dispositivos</p>
+            <p class="detalle">🎶 Contenido destacado: Vídeos musicales, listas con inteligencia artificial, audio de alta fidelidad</p>
+            <button onclick="agregarAlCarrito('Spotify', 10)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/youtube.jpeg" alt="YouTube" class="producto-img" />
+            <h3>YouTube - S/7.00</h3>
+            <p class="descripcion">📺 Disfruta de YouTube sin anuncios, con reproducción en segundo plano y descargas disponibles. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Sin publicidad • Reproducción en segundo plano • Acceso anticipado a funciones nuevas • Compatible con Android, iOS y navegadores</p>
+            <p class="detalle">🎞 Contenido destacado: Audio en 256 kbps, videos exclusivos de creadores top</p>
+            <button onclick="agregarAlCarrito('YouTube', 7)">Agregar al carrito</button>
+        </div>
+
+        <!-- Más productos, con imágenes, descripciones y botones -->
+
+        <div class="producto">
+            <img src="assets/disneyplus.jpeg" alt="Disney+" class="producto-img" />
+            <h3>Disney+ - S/10.00</h3>
+            <p class="descripcion">✨ Todo el universo de Disney, Pixar, Marvel, Star Wars y National Geographic en un solo lugar. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta original y renovable • Compatible con Smart TVs, móviles, tablets y más</p>
+            <p class="detalle">🎞 Contenido destacado: Eyes of Wakanda, Spider-Man: Freshman Year, Win or Lose</p>
+            <button onclick="agregarAlCarrito('Disney+', 10)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/spotify1mes.jpeg" alt="Spotify 1 mes" class="producto-img" />
+            <h3>Spotify 1 mes - S/10.00</h3>
+            <p class="descripcion">🎵 Música premium sin anuncios. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta individual • Audio Hi-Fi</p>
+            <button onclick="agregarAlCarrito('Spotify 1 mes', 10)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/Spotify3mes.jpeg" alt="Spotify 3 mes" class="producto-img" />
+            <h3>Spotify 3 mes - S/22.00</h3>
+            <p class="descripcion">🎵 Música premium sin anuncios. ⏳ Duración: 90 días.</p>
+            <p class="detalle">✔️ Cuenta individual • Audio Hi-Fi</p>
+            <button onclick="agregarAlCarrito('Spotify 3 mes', 22)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/crunchyroll.jpeg" alt="Crunchyroll" class="producto-img" />
+            <h3>Crunchyroll - S/8.00</h3>
+            <p class="descripcion">🌸 El mejor anime en un solo lugar, con simulcast, doblaje y subtítulos. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta renovable • Compatible con todos los dispositivos • Subtítulos y doblajes disponibles</p>
+            <p class="detalle">🎞 Contenido destacado: Solo Leveling 2, Dr. STONE: New World, Los diarios de la boticaria</p>
+            <button onclick="agregarAlCarrito('Crunchyroll', 8)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/chatsito.jpeg" alt="Chatsito" class="producto-img" />
+            <h3>Chatsito - S/20.00</h3>
+            <p class="descripcion">🤖 Potencia tu productividad con la inteligencia artificial más avanzada. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso a GPT-4 • Respuestas mejoradas • Prioridad en funciones nuevas</p>
+            <p class="detalle">🎞 Contenido destacado: Redacción, ideas, programación y más</p>
+            <button onclick="agregarAlCarrito('Chatsito', 20)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/paramount.jpeg" alt="Paramount" class="producto-img" />
+            <h3>Paramount - S/8.00</h3>
+            <p class="descripcion">🎬 Disfruta de películas, series y deportes exclusivos. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta renovable • Compatible con Smart TVs, laptops y móviles</p>
+            <p class="detalle">🎞 Contenido destacado: Star Trek: Strange New Worlds, Halo, Yellowstone</p>
+            <button onclick="agregarAlCarrito('Paramount', 8)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/canva.jpeg" alt="Canva" class="producto-img" />
+            <h3>Canva - S/6.00</h3>
+            <p class="descripcion">🎨 Diseña presentaciones, logos y contenido visual como un profesional. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Plantillas premium y recursos gráficos desbloqueados • Sin marcas de agua</p>
+            <p class="detalle">🎞 Contenido destacado: Diseños para redes sociales, CVs, posters • Herramientas con IA para edición rápida</p>
+            <button onclick="agregarAlCarrito('Canva', 6)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/tidal.jpeg" alt="Tidal" class="producto-img" />
+            <h3>Tidal - S/9.00</h3>
+            <p class="descripcion">🎵 Escucha música en la más alta calidad con sonido espacial. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Audio HiFi y Master • Sin anuncios • Disponible offline</p>
+            <p class="detalle">🎞 Contenido destacado: Dolby Atmos y sonido espacial • Contenido exclusivo y anticipado</p>
+            <button onclick="agregarAlCarrito('Tidal', 9)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/clarovideo.jpeg" alt="Claro Video" class="producto-img" />
+            <h3>Claro Video - S/15.00</h3>
+            <p class="descripcion">🎬 ¡Disfruta de series, películas y contenido latino sin límites! ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Cuenta original y renovable • Una pantalla por cuenta • Disponible en América Latina • Compatible con smartphones, smart TVs, laptops y PC</p>
+            <p class="detalle">🎞 Contenido destacado: La reina del sur, Club de Cuervos, Películas mexicanas, novelas y estrenos</p>
+            <button onclick="agregarAlCarrito('Claro Video', 15)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/capcutpro.jpeg" alt="Cap CutPro" class="producto-img" />
+            <h3>Cap CutPro - S/15.00</h3>
+            <p class="descripcion">🎞️ Edita tus videos como un profesional, fácil y rápido. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Herramientas premium desbloqueadas • Compatible con móviles y PC • Exportaciones sin marca de agua</p>
+            <p class="detalle">🎞 Contenido destacado: Plantillas virales, efectos de IA y filtros pro, edición 4K y capas múltiples</p>
+            <button onclick="agregarAlCarrito('Cap CutPro', 15)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/iptv.jpeg" alt="IPTV" class="producto-img" />
+            <h3>IPTV - S/11.00</h3>
+            <p class="descripcion">📺 Televisión en vivo desde cualquier dispositivo. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Lista M3U personalizada • Canales en HD y Full HD • Compatible con TV Box, Smart TV, celulares y PC</p>
+            <p class="detalle">🎞 Contenido destacado: Canales latinos, deportivos, premium y adultos • Eventos en vivo y repeticiones</p>
+            <button onclick="agregarAlCarrito('IPTV', 11)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/l1max.jpeg" alt="L1 MAX" class="producto-img" />
+            <h3>L1 MAX - S/11.00</h3>
+            <p class="descripcion">📡 Televisión y contenido exclusivo en alta calidad. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Más de 5000 canales y películas • Compatible con Android, Smart TV, laptops y más</p>
+            <p class="detalle">🎞 Contenido destacado: Eventos deportivos en vivo, series, películas y canales premium</p>
+            <button onclick="agregarAlCarrito('L1 MAX', 11)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/wintv.jpeg" alt="Win TV" class="producto-img" />
+            <h3>Win TV - S/12.00</h3>
+            <p class="descripcion">⚽ La mejor experiencia deportiva y de entretenimiento. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Soporte 24/7 • Cobertura de fútbol y deportes latinos • Compatible con todos los dispositivos</p>
+            <p class="detalle">🎞 Contenido destacado: Transmisión de la liga colombiana, programas deportivos exclusivos</p>
+            <button onclick="agregarAlCarrito('Win TV', 12)">Agregar al carrito</button>
+        </div>
+
+        <!-- NUEVOS PRODUCTOS AGREGADOS -->
+
+        <div class="producto">
+            <img src="assets/vix.jpeg" alt="Vix" class="producto-img" />
+            <h3>Vix - S/9.00</h3>
+            <p class="descripcion">🇲🇽 Plataforma mexicana con contenido gratuito y exclusivo. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Acceso por 30 días • Compatible con cualquier dispositivo • Sin publicidad (en plan premium)</p>
+            <p class="detalle">🎞 Contenido destacado: La Rosa de Guadalupe, Series mexicanas y programación familiar</p>
+            <button onclick="agregarAlCarrito('Vix', 9)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/porhub.jpeg" alt="Pornhub Premium" class="producto-img" />
+            <h3>Pornhub Premium - S/7.00</h3>
+            <p class="descripcion">🔞 Contenido exclusivo para adultos sin anuncios. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Calidad HD y 4K • Videos sin censura y sin publicidad • Acceso anticipado a estrenos premium</p>
+            <p class="detalle">🎞 Compatible con smartphones, PC, TV Box y consolas</p>
+            <button onclick="agregarAlCarrito('Pornhub Premium', 7)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/deezer.jpeg" alt="Deezer Premium" class="producto-img" />
+            <h3>Deezer Premium - S/11.00</h3>
+            <p class="descripcion">🎧 Escucha toda la música sin límites ni anuncios. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Soporte 24/7 • Audio de alta fidelidad (HiFi) • Descargas para escuchar sin conexión</p>
+            <p class="detalle">🎞 Contenido destacado: Flow personalizado, Letra en tiempo real, Compatible con todos los dispositivos</p>
+            <button onclick="agregarAlCarrito('Deezer Premium', 11)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/dgo.jpeg" alt="D GO Exclusivo" class="producto-img" />
+            <h3>D GO Exclusivo - S/30.00</h3>
+            <p class="descripcion">📺 Televisión en vivo y streaming en una sola app. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Soporte 24/7 • Canales en vivo, películas y series • Compatible con Android TV, Fire Stick, móviles y más</p>
+            <p class="detalle">🎞 Contenido destacado: Deportes, HBO, Star Channel, Eventos en vivo y catch-up</p>
+            <button onclick="agregarAlCarrito('D GO Exclusivo', 30)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/movistarplay.jpeg" alt="Movistar Play" class="producto-img" />
+            <h3>Movistar Play - S/16.00</h3>
+            <p class="descripcion">📺 Disfruta series, películas y TV en vivo desde cualquier lugar. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Cuenta renovable • Compatible con dispositivos Movistar, Smart TV, laptops y smartphones</p>
+            <p class="detalle">🎞 Contenido destacado: Películas on demand, Series originales Movistar+</p>
+            <button onclick="agregarAlCarrito('Movistar Play', 16)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/flujo.jpeg" alt="Flujo TV" class="producto-img" />
+            <h3>Flujo TV - S/17.00</h3>
+            <p class="descripcion">📡 Canales nacionales e internacionales en vivo. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Más de 200 canales • Sin anuncios ni cortes • Compatible con cualquier dispositivo</p>
+            <p class="detalle">🎞 Contenido destacado: Deportes, noticias, entretenimiento y más</p>
+            <button onclick="agregarAlCarrito('Flujo TV', 17)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/appletv.jpeg" alt="Apple TV+" class="producto-img" />
+            <h3>Apple TV+ - S/11.00</h3>
+            <p class="descripcion">🍏 Series y películas originales Apple de alta calidad. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Soporte 24/7 • Compatible con iOS, Android TV, laptops y consolas</p>
+            <p class="detalle">🎞 Contenido destacado: Foundation, Severance, Masters of the Air</p>
+            <button onclick="agregarAlCarrito('Apple TV+', 11)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="assets/applemusic.jpeg" alt="Apple Music" class="producto-img" />
+            <h3>Apple Music - S/11.00</h3>
+            <p class="descripcion">🎵 Toda tu música favorita con calidad premium. ⏳ Duración: 30 días.</p>
+            <p class="detalle">✔️ Biblioteca de más de 100 millones de canciones • Audio espacial y sin pérdida (Lossless) • Letras en vivo y sin anuncios</p>
+            <p class="detalle">🎞 Compatible con iPhone, Android, Mac, Windows y más</p>
+            <button onclick="agregarAlCarrito('Apple Music', 11)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+    <img src="assets/viki.jpeg" alt="Viki Rakuten" class="producto-img" />
+    <h3>Viki Rakuten - S/9.00</h3>
+    <p class="descripcion">📝 Plataforma ideal para los amantes de los dramas asiáticos, con subtítulos en múltiples idiomas y contenido exclusivo. ⏳ Duración: 30 días.</p>
+    <p class="detalle">✅ Acceso por 30 días • Subtítulos en varios idiomas • Contenido HD sin anuncios • Compatible con Smart TV, móviles, tablets y PC</p>
+    <p class="detalle">⭐ Contenido destacado: K-Dramas, C-Dramas y J-Dramas • Variety shows y contenido exclusivo asiático</p>
+    <button onclick="agregarAlCarrito('Viki Rakuten', 9)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/adobe.jpeg" alt="Adobe Creative" class="producto-img" />
+    <h3>Adobe Creative - S/35.00</h3>
+    <p class="descripcion">📝 Todas las herramientas creativas de Adobe para diseñar, editar y crear contenido profesional. ⏳ Duración: 30 días.</p>
+    <p class="detalle">✅ Acceso por 30 días • Photoshop, Illustrator, Premiere Pro y más • Almacenamiento en la nube incluido • Compatible con Windows y macOS</p>
+    <p class="detalle">⭐ Contenido destacado: Edición de video, diseño gráfico y fotografía profesional • Actualizaciones constantes</p>
+    <button onclick="agregarAlCarrito('Adobe Creative', 35)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/tiktok.jpeg" alt="1000 Seguidores Tiktok" class="producto-img" />
+    <h3>1000 Seguidores TikTok - S/20.00</h3>
+    <p class="descripcion">📝 Impulsa tu perfil de TikTok con 1000 seguidores reales y mejora tu visibilidad. ⏳ Entrega rápida (24 a 72 horas).</p>
+    <p class="detalle">✅ Seguidores reales y activos • Sin necesidad de contraseña • Soporte 24/7</p>
+    <p class="detalle">⭐ Contenido destacado: Aumenta tu engagement • Ideal para creadores y marcas personales</p>
+    <button onclick="agregarAlCarrito('1000 Seguidores TikTok', 20)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/mubi.jpeg" alt="Mubi" class="producto-img" />
+    <h3>Mubi - S/9.00</h3>
+    <p class="descripcion">📝 Cine independiente, clásico y de autor para verdaderos cinéfilos. ⏳ Duración: 30 días.</p>
+    <p class="detalle">✅ Acceso por 30 días • Una película nueva cada día • Películas seleccionadas por curadores expertos • Compatible con todos los dispositivos</p>
+    <p class="detalle">⭐ Contenido destacado: Películas galardonadas, clásicos restaurados y documentales exclusivos</p>
+    <button onclick="agregarAlCarrito('Mubi', 9)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/frefire.jpeg" alt="Pase Buyah Free Fire" class="producto-img" />
+    <h3>Pase Buyah Free Fire - S/10.00</h3>
+    <p class="descripcion">📝 Contenido exclusivo, diamantes y recompensas únicas en Free Fire. ⏳ Duración: 1 mes o una recarga.</p>
+    <p class="detalle">✅ Contenido exclusivo del mes • Recompensas desbloqueables con misiones • Compatible con cuentas Free Fire LATAM</p>
+    <p class="detalle">⭐ Contenido destacado: Skins, diamantes y eventos especiales • Pase válido para temporadas activas</p>
+    <button onclick="agregarAlCarrito('Pase Buyah Free Fire', 10)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/universal.jpeg" alt="Universal +" class="producto-img" />
+    <h3>Universal + - S/9.00</h3>
+    <p class="descripcion">📝 Las mejores series y películas de Universal Studios con estrenos exclusivos. ⏳ Duración: 30 días.</p>
+    <p class="detalle">✅ Acceso por 30 días • Compatible con TV, PC y móviles • Calidad HD y sin anuncios</p>
+    <p class="detalle">⭐ Contenido destacado: Series como 'La ley y el orden', películas taquilleras y documentales</p>
+    <button onclick="agregarAlCarrito('Universal +', 9)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/eset.jpeg" alt="Eset NOD ANTIVIRUS" class="producto-img" />
+    <h3>Eset NOD ANTIVIRUS - S/27.00</h3>
+    <p class="descripcion">📝 Protección avanzada contra virus, malware y ransomware en tiempo real. ⏳ Licencia por 1 año.</p>
+    <p class="detalle">✅ Actualizaciones automáticas • Compatible con Windows, macOS, Android • Soporte técnico incluido</p>
+    <p class="detalle">⭐ Contenido destacado: Protección proactiva • Bajo consumo de recursos</p>
+    <button onclick="agregarAlCarrito('Eset NOD ANTIVIRUS', 27)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+    <img src="assets/koco.jpeg" alt="Kocowa+" class="producto-img" />
+    <h3>Kocowa+ - S/9.00</h3>
+    <p class="descripcion">📝 Dramas y programas coreanos directamente desde Corea del Sur. ⏳ Duración: 30 días.</p>
+    <p class="detalle">✅ Acceso por 30 días • Contenido premium sin anuncios • Compatible con múltiples dispositivos • Subtítulos en español e inglés</p>
+    <p class="detalle">⭐ Contenido destacado: Dramas populares coreanos, variety shows y K-pop</p>
+    <button onclick="agregarAlCarrito('Kocowa+', 9)">Agregar al carrito</button>
+</div>
+
+
+        
+    </section>
+
+    <section id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="listaCarrito">
+            <li>No hay productos en el carrito.</li>
+        </ul>
+        <button
+            id="finalizarCompra"
+            style="
+                margin-top: 15px;
+                background-color: #00cc99;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+            "
+        >
+            Finalizar Compra
+        </button>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes dudas? Escríbenos a través de WhatsApp:</p>
+        <a href="https://wa.me/51955099644" target="_blank">WhatsApp Dart Stream</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dart Stream. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
